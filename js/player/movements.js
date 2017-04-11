@@ -12,6 +12,7 @@ var mousePanelSensitivity = 0.06;
 $(document).ready(function(){
 
   playerCam.attachControl(canva, false);
+  playerCam.speed = 1;
   playerCam.keysUp.push(90);
   playerCam.keysDown.push(83);
   playerCam.keysLeft.push(81);

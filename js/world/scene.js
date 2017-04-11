@@ -7,9 +7,10 @@
 var canva = $("#gameCanva").get(0);
 var engine, scene, playerCam;
 
-// booleans for view control; dash;
+// booleans for view control; dash; jump;
 var viewUp = false, viewLeft = false, viewRight = false, viewDown = false;
-var dashLeft = false, dashRight = false, dashSpeed = 1, dashTime = 0, dashCd = 0, dashOn = false;
+var dashLeft = false, dashRight = false, dashSpeed = 1, dashTime = 0, dashCd = 0;
+var jump = false, jumpUpSpeed, jumpTime = 0, jumpCd = 0;
 
 // setting scene and running game loop
 $(document).ready(function(){
@@ -47,16 +48,29 @@ function dashIfNeeded(){
   if (dashTime > 0)
   {
     dashTime--;
-    if (dashLeft == true) {playerCam.position.x -= dashSpeed;console.log("left")}
-    else if (dashRight == true) {playerCam.position.x += dashSpeed;console.log("right")}
+    if (dashLeft == true) playerCam.position.x -= dashSpeed;
+    else if (dashRight == true) playerCam.position.x += dashSpeed;
     if (dashTime == 0) {dashLeft = false; dashRight = false;}
   }
+}
+
+function jumpIfNeeded(){
+
+  if (jumpCd > 0) jumpCd--;
+  if (jumpTime > 0)
+  {
+    jumpTime--;
+    if (jump == true && jumpTime > 10) playerCam.position.y += jumpSpeed;
+    if (jumpTime == 0) {jump = false;}
+  }
+
 }
 
 function gameLoop() {
 
   moveViewIfNeeded();
   dashIfNeeded();
+  jumpIfNeeded();
 
   scene.render();
 }

@@ -4,9 +4,12 @@
 ** AnimalKing Game
 */
 
-var canva = $("#gamePlayer").get(0);
+var canva = $("#gameCanva").get(0);
 var camTargetX = 0, camTargetY = 0, camTargetZ = 0;
 var engine, scene, playerCam;
+
+// booleans for view control;
+var viewUp = false, viewLeft = false, viewRight = false, viewDown = false;
 
 // setting scene and running game loop
 $(document).ready(function(){
@@ -28,7 +31,27 @@ function initScene() {
   var box = BABYLON.Mesh.CreateBox("Box", 4.0, scene);
 }
 
+function moveViewIfNeeded(){
+
+  // move view
+  if (viewUp) {
+    playerCam.rotation.x -= mousePanelSensitivity;
+    console.log("playerCamRotationX = " + playerCam.rotation.x);
+  } else if (viewLeft) {
+    playerCam.rotation.y -= mousePanelSensitivity;
+    console.log("playerCamRotationY = " + playerCam.rotation.y);
+  } else if (viewRight) {
+    playerCam.rotation.y += mousePanelSensitivity;
+    console.log("playerCamRotationY = " + playerCam.rotation.y);
+  } else if (viewDown) {
+      playerCam.rotation.x += mousePanelSensitivity;
+      console.log("playerCamRotationX = " + playerCam.rotation.x);
+  }
+}
+
 function gameLoop() {
+
+  moveViewIfNeeded();
 
   scene.render();
 }

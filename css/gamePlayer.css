@@ -6,6 +6,64 @@
 
 #gamePlayer
 {
-  width: 99%;
-  height: 100%;
+  cursor: none;
+  overflow: hidden;
+}
+
+#topPanel
+{
+  width: 100%;
+  height: 3.1%;
+  background-color: white;
+  color: white;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+#leftPanel
+{
+  width: 1.3%;
+  height: 93.7%;
+  background-color: blue;
+  display: inline;
+  position: absolute;
+  left: 0px;
+  margin-top: 1.05%;
+  background-color: white;
+  color: white;
+}
+
+#gameCanva
+{
+  margin-top: 1.06%;
+  margin-left: 0.8%;
+  width: 97.4%;
+  height: 93.7%;
+  position: absolute;
+}
+
+#rightPanel
+{
+  width: 1.3%;
+  height: 93.7%;
+  background-color: blue;
+  display: inline;
+  position: absolute;
+  margin-top: 1.05%;
+  margin-left: 98.18%;
+  background-color: white;
+  color: white;
+}
+
+#botPanel
+{
+  width: 100%;
+  height: 3.1%;
+  background-color: red;
+  position: absolute;
+  left: 0px;
+  top: 96.8%;
+  background-color: white;
+  color: white;
 }

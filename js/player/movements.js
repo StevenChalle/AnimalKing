@@ -1,12 +1,12 @@
 /*
-** characterMovements.js
+** movements.js
 ** --
 ** AnimalKing Game
 */
 
 var oldX, oldY;
 var mouseSensitivity = 0.015;
-var mousePanelSensitivity = 0.04;
+var mousePanelSensitivity = 0.06;
 
 // adding camera controls
 $(document).ready(function(){
@@ -18,22 +18,17 @@ $(document).ready(function(){
   playerCam.keysRight.push(68);
   playerCam.inputs.attached.mouse.detachControl();
 
-  // on mousemove
   $("#gameCanva").mousemove(function(event){
 
     // move camera view to the left or right, then up and down
     if (event.pageX < oldX) {
       playerCam.rotation.y -= mouseSensitivity;
-      console.log("playerCamRotationY = " + playerCam.rotation.y);
     } else if (event.pageX > oldX) {
       playerCam.rotation.y += mouseSensitivity;
-      console.log("playerCamRotationY = " + playerCam.rotation.y);
     } if (event.pageY < oldY) {
       playerCam.rotation.x -= mouseSensitivity;
-      console.log("playerCamRotationX = " + playerCam.rotation.x);
     } else if (event.pageY > oldY) {
       playerCam.rotation.x += mouseSensitivity;
-      console.log("playerCamRotationX = " + playerCam.rotation.x);
     }
 
     oldX = event.pageX;
@@ -58,6 +53,4 @@ $(document).ready(function(){
   }).mouseleave(function(){
     viewDown = false;
   });
-
-
 });

@@ -6,7 +6,7 @@
 
 var oldX, oldY;
 var mouseSensitivity = 0.015;
-var mousePanelSensitivity = 0.06;
+var mousePanelSensitivity = 0.04;
 
 // adding camera controls
 $(document).ready(function(){

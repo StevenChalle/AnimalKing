@@ -16,16 +16,14 @@ $(document).ready(function(){
   // on mousemove
   $("#gameCanva").mousemove(function(event){
 
-    // move camera view to the left then right
+    // move camera view to the left or right, then up and down
     if (event.pageX < oldX) {
       playerCam.rotation.y -= mouseSensitivity;
       console.log("playerCamRotationY = " + playerCam.rotation.y);
     } else if (event.pageX > oldX) {
       playerCam.rotation.y += mouseSensitivity;
       console.log("playerCamRotationY = " + playerCam.rotation.y);
-    }
-    // move camera view up then down
-    if (event.pageY < oldY) {
+    } if (event.pageY < oldY) {
       playerCam.rotation.x -= mouseSensitivity;
       console.log("playerCamRotationX = " + playerCam.rotation.x);
     } else if (event.pageY > oldY) {
@@ -42,18 +40,15 @@ $(document).ready(function(){
     viewUp = true;
   }).mouseleave(function(){
     viewUp = false;
-  });
-  $("#leftPanel").mouseenter(function(){
+  }); $("#leftPanel").mouseenter(function(){
     viewLeft = true;
   }).mouseleave(function(){
     viewLeft = false;
-  });
-  $("#rightPanel").mouseenter(function(){
+  }); $("#rightPanel").mouseenter(function(){
     viewRight = true;
   }).mouseleave(function(){
     viewRight = false;
-  });
-  $("#botPanel").mouseenter(function(){
+  }); $("#botPanel").mouseenter(function(){
     viewDown = true;
   }).mouseleave(function(){
     viewDown = false;

@@ -11,7 +11,12 @@ var mousePanelSensitivity = 0.04;
 // adding camera controls
 $(document).ready(function(){
 
-  playerCam.attachControl(canva, true);
+  playerCam.attachControl(canva, false);
+  playerCam.keysUp.push(90);
+  playerCam.keysDown.push(83);
+  playerCam.keysLeft.push(81);
+  playerCam.keysRight.push(68);
+  playerCam.inputs.attached.mouse.detachControl();
 
   // on mousemove
   $("#gameCanva").mousemove(function(event){

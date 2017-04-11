@@ -14,7 +14,8 @@ Wamp server on Windows or Lamp server on Mac/Linux will do the trick. Download o
 
 3. Place the game sources in your server :
 In the repository "www" of your server, create a repository named "AnimalKingRepo".
-In AnimalKingRepo, put the repository found on this page, unzipped.
+In that last one, create a repository named "AnimalKing".
+In that last one, unzipp the .zip file received from that url.
 
 4. Launch the server
 
